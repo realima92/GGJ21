@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class LoadingManager : MonoBehaviour
+public class LoadingController : MonoBehaviour
 {
-    private GameObject loadingUI;
+    [SerializeField] private GameObject loadingUI;
 
     // Start is called before the first frame update
     void Awake()
@@ -17,15 +17,28 @@ public class LoadingManager : MonoBehaviour
 
     public void EnterLobby()
     {
-        loadingUI.SetActive(false);
+        Invoke("ShowLoadingUI", .3f);
         SceneManager.LoadScene("GameLobby");
+    }
+
+    public void BackScene()
+    {
+        //Temporary code
+        Invoke("ShowLoadingUI", .3f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    private void ShowLoadingUI()
+    {
+        loadingUI.SetActive(true);
     }
 
     private UnityAction<Scene, LoadSceneMode> OnSceneLoaded()
     {
         return new UnityAction<Scene, LoadSceneMode>((scene, mode) =>
         {
-            loadingUI.SetActive(false);
+            CancelInvoke("ShowLoadingUI");
+            if (loadingUI && loadingUI.activeSelf) loadingUI.SetActive(false);
         });
     }
 }

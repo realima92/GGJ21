@@ -1,43 +1,43 @@
 ﻿using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
 
 namespace Network
 {
     public class NetworkManager : MonoBehaviour
     {
-        private static NetworkManager _manager;
-        private INetworkServices _service;
+        private static NetworkManager _instance;
+        private static INetworkServices _service;
 
-        public static NetworkManager Manager => _manager;
+        public static NetworkManager Instance => _instance;
 
         // Start is called before the first frame update
         void Awake()
         {
             //Singleton
-            if (_manager == null)
+            if (_instance == null)
             {
-                _manager = this;
+                _instance = this;
                 DontDestroyOnLoad(gameObject);
+
+                //Test
+                //ConnectService();
             }
-            else if (_manager != this)
+            else if (_instance != this)
             {
                 Destroy(gameObject);
             }
-
-            //Test
-            ConnectService();
         }
 
-        public void ConnectService()
+        public static void ConnectService()
         {
-            _service = gameObject.AddComponent<PhotonNetworkService>();
+            _service = _instance.gameObject.AddComponent<PhotonNetworkService>();
         }
 
-        public void DisconnectService()
+        public static void DisconnectService()
         {
             _service = null;
-            Destroy((Component)gameObject.GetComponent<INetworkServices>());
+            Destroy((Component) _instance.gameObject.GetComponent<INetworkServices>());
         }
+
+
     }
 }
