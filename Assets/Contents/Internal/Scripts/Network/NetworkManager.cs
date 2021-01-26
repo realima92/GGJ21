@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Network
 {
@@ -38,6 +39,10 @@ namespace Network
             Destroy((Component) _instance.gameObject.GetComponent<INetworkServices>());
         }
 
-
+        public static void JoinRoom()
+        {
+            if (_service.InLobby())
+                _service.JoinRoom();
+        }
     }
 }

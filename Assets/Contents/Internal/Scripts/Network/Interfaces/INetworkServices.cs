@@ -13,5 +13,6 @@
 
         void JoinLobby();
         bool InLobby();
+        void JoinRoom();
     }
 }

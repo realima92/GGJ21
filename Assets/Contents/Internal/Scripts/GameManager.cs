@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using Network;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+
     public static GameManager Instance => _instance;
 
     public LoadingController LoadController;
@@ -19,6 +21,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public static void StartSingleplayer()
+    {
+        Instance.LoadController.StartGame();
     }
 
     public static void ExitGame()

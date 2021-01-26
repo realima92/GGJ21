@@ -28,6 +28,12 @@ public class LoadingController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    internal void StartGame()
+    {
+        Invoke("ShowLoadingUI", .3f);
+        SceneManager.LoadScene("GamePlay");
+    }
+
     private void ShowLoadingUI()
     {
         loadingUI.SetActive(true);

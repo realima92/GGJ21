@@ -68,5 +68,14 @@ namespace Network
             base.OnJoinedLobby();
             Debug.Log($"[Network][{this.GetType().Name}] Joined lobby");
         }
+
+        public void JoinRoom()
+        {
+            if (PhotonNetwork.InLobby)
+            {
+                Debug.Log($"[Network][{this.GetType().Name}] Joining room...");
+                PhotonNetwork.JoinRandomRoom();
+            }
+        }
     }
 }
