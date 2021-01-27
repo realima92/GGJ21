@@ -14,22 +14,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "a138781b-d88e-4e3c-bdd2-57f3ee9eeae3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "1d5564b0-3c41-48f3-a816-a9230a6e8466",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "TogglePause",
                     "type": "Button",
                     "id": "1e122720-bb6a-4aad-a8f8-3be5b787a7ea",
@@ -40,9 +24,9 @@
             ],
             "bindings": [
                 {
-                    "name": "AD [Keyboard]",
-                    "id": "3ac2e630-e6a9-480b-aaaa-0d3da5087294",
-                    "path": "1DAxis",
+                    "name": "WSAD",
+                    "id": "8186e47e-e010-4373-a528-5c210f6a043c",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -51,8 +35,30 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Negative",
-                    "id": "38e509fb-8159-4591-b24e-b6a7cf882e46",
+                    "name": "up",
+                    "id": "1457f44d-2f4e-40c7-bc1d-94f5a3ee7ea5",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "144af401-32a4-4878-a809-b5a4ece72836",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "0dc25652-7edf-423a-9f11-3c73e5e65004",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -62,8 +68,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Positive",
-                    "id": "2c5e6d1d-f430-4db8-a9b6-5ed6ecc9c7ce",
+                    "name": "right",
+                    "id": "86aacef4-fa14-43a0-8272-23c70804578f",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -71,83 +77,6 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "Left Sides [Gamepad]",
-                    "id": "5518e7db-9019-458c-b88b-0fffad44fdc9",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "9a273d96-d4ff-4ff6-a6bf-c2b78c89b03a",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "0f159144-3d18-4a55-9716-1aa85d17c90e",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "df98bd05-a27e-4e07-9a00-de6131706cbc",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "df91211a-a880-4951-a114-7e9aeb0a70e3",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57877b1c-11f9-4fb4-b7d7-d07c5ebf6e97",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0e3678b7-85c5-4508-b76d-5b6da777e0ee",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -184,6 +113,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Navigate",
+                    "type": "Button",
+                    "id": "fa157ac5-f02f-4f57-b96b-702856648825",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -197,6 +134,61 @@
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Navigate",
+                    "id": "1fe9b6c5-0051-41bb-8055-4886ccd64780",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "07371b53-d03e-4bc3-8fd4-c31fd8d1b98b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "80508383-d427-487b-a741-b47ac8200e26",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "2cad6aa4-ebb3-45b9-b81a-ff2162c5b135",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0c153b7c-1df7-4fcc-9220-9e33d278841b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

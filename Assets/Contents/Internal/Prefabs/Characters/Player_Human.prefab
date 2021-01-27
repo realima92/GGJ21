@@ -481,10 +481,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.4
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &449000152121292727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -499,7 +499,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &449000152121292726
 MonoBehaviour:
@@ -513,6 +513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af286868523e9d4d8471dfe6ad05af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunSpeed: 5
+  DashPower: 2
+  TurnSmooth: 15
 --- !u!1 &449299850504003057
 GameObject:
   m_ObjectHideFlags: 0

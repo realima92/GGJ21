@@ -27,22 +27,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""a138781b-d88e-4e3c-bdd2-57f3ee9eeae3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""1d5564b0-3c41-48f3-a816-a9230a6e8466"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""TogglePause"",
                     ""type"": ""Button"",
                     ""id"": ""1e122720-bb6a-4aad-a8f8-3be5b787a7ea"",
@@ -53,9 +37,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""AD [Keyboard]"",
-                    ""id"": ""3ac2e630-e6a9-480b-aaaa-0d3da5087294"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""WSAD"",
+                    ""id"": ""8186e47e-e010-4373-a528-5c210f6a043c"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -64,8 +48,30 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Negative"",
-                    ""id"": ""38e509fb-8159-4591-b24e-b6a7cf882e46"",
+                    ""name"": ""up"",
+                    ""id"": ""1457f44d-2f4e-40c7-bc1d-94f5a3ee7ea5"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""144af401-32a4-4878-a809-b5a4ece72836"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""0dc25652-7edf-423a-9f11-3c73e5e65004"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -75,8 +81,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Positive"",
-                    ""id"": ""2c5e6d1d-f430-4db8-a9b6-5ed6ecc9c7ce"",
+                    ""name"": ""right"",
+                    ""id"": ""86aacef4-fa14-43a0-8272-23c70804578f"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -84,83 +90,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left Sides [Gamepad]"",
-                    ""id"": ""5518e7db-9019-458c-b88b-0fffad44fdc9"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""9a273d96-d4ff-4ff6-a6bf-c2b78c89b03a"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""0f159144-3d18-4a55-9716-1aa85d17c90e"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""df98bd05-a27e-4e07-9a00-de6131706cbc"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""df91211a-a880-4951-a114-7e9aeb0a70e3"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""57877b1c-11f9-4fb4-b7d7-d07c5ebf6e97"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0e3678b7-85c5-4508-b76d-5b6da777e0ee"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -197,6 +126,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa157ac5-f02f-4f57-b96b-702856648825"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -210,6 +147,61 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""id"": ""1fe9b6c5-0051-41bb-8055-4886ccd64780"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""07371b53-d03e-4bc3-8fd4-c31fd8d1b98b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""80508383-d427-487b-a741-b47ac8200e26"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2cad6aa4-ebb3-45b9-b81a-ff2162c5b135"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""0c153b7c-1df7-4fcc-9220-9e33d278841b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -219,12 +211,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
         // Gameplay Controls
         m_GameplayControls = asset.FindActionMap("Gameplay Controls", throwIfNotFound: true);
         m_GameplayControls_Movement = m_GameplayControls.FindAction("Movement", throwIfNotFound: true);
-        m_GameplayControls_Jump = m_GameplayControls.FindAction("Jump", throwIfNotFound: true);
-        m_GameplayControls_Crouch = m_GameplayControls.FindAction("Crouch", throwIfNotFound: true);
         m_GameplayControls_TogglePause = m_GameplayControls.FindAction("TogglePause", throwIfNotFound: true);
         // Menu Controls
         m_MenuControls = asset.FindActionMap("Menu Controls", throwIfNotFound: true);
         m_MenuControls_Click = m_MenuControls.FindAction("Click", throwIfNotFound: true);
+        m_MenuControls_Navigate = m_MenuControls.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -275,16 +266,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputActionMap m_GameplayControls;
     private IGameplayControlsActions m_GameplayControlsActionsCallbackInterface;
     private readonly InputAction m_GameplayControls_Movement;
-    private readonly InputAction m_GameplayControls_Jump;
-    private readonly InputAction m_GameplayControls_Crouch;
     private readonly InputAction m_GameplayControls_TogglePause;
     public struct GameplayControlsActions
     {
         private @InputMaster m_Wrapper;
         public GameplayControlsActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_GameplayControls_Movement;
-        public InputAction @Jump => m_Wrapper.m_GameplayControls_Jump;
-        public InputAction @Crouch => m_Wrapper.m_GameplayControls_Crouch;
         public InputAction @TogglePause => m_Wrapper.m_GameplayControls_TogglePause;
         public InputActionMap Get() { return m_Wrapper.m_GameplayControls; }
         public void Enable() { Get().Enable(); }
@@ -298,12 +285,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnMovement;
-                @Jump.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnJump;
-                @Crouch.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnCrouch;
-                @Crouch.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnCrouch;
-                @Crouch.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnCrouch;
                 @TogglePause.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnTogglePause;
                 @TogglePause.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnTogglePause;
                 @TogglePause.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnTogglePause;
@@ -314,12 +295,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
-                @Crouch.started += instance.OnCrouch;
-                @Crouch.performed += instance.OnCrouch;
-                @Crouch.canceled += instance.OnCrouch;
                 @TogglePause.started += instance.OnTogglePause;
                 @TogglePause.performed += instance.OnTogglePause;
                 @TogglePause.canceled += instance.OnTogglePause;
@@ -332,11 +307,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputActionMap m_MenuControls;
     private IMenuControlsActions m_MenuControlsActionsCallbackInterface;
     private readonly InputAction m_MenuControls_Click;
+    private readonly InputAction m_MenuControls_Navigate;
     public struct MenuControlsActions
     {
         private @InputMaster m_Wrapper;
         public MenuControlsActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Click => m_Wrapper.m_MenuControls_Click;
+        public InputAction @Navigate => m_Wrapper.m_MenuControls_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_MenuControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -349,6 +326,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Click.started -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnClick;
                 @Click.performed -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnClick;
                 @Click.canceled -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnClick;
+                @Navigate.started -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnNavigate;
             }
             m_Wrapper.m_MenuControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -356,6 +336,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
             }
         }
     }
@@ -363,12 +346,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
     public interface IGameplayControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
         void OnTogglePause(InputAction.CallbackContext context);
     }
     public interface IMenuControlsActions
     {
         void OnClick(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
 }
