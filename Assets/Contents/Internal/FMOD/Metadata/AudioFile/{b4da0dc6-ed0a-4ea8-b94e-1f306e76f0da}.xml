@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{b4da0dc6-ed0a-4ea8-b94e-1f306e76f0da}">
+		<property name="assetPath">
+			<value>MX Menu - Mockup 01.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>18.337959183673469</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{805f1032-8161-4daf-a23c-11b887cc2248}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Contents/Internal/Scenes/MainMenu.unity
     guid: 759a433b8566b5f488e6467c880718d1
-  - enabled: 1
-    path: Assets/Contents/Internal/Scenes/GameLobby.unity
-    guid: e4666aca1b1ef1f45bfae1d22a2f07ed
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Contents/Internal/Scenes/GamePlay.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
