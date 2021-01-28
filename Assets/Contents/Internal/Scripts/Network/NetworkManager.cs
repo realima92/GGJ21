@@ -42,7 +42,13 @@ namespace Network
         public static void JoinRoom()
         {
             if (_service.InLobby())
+            {
                 _service.JoinRoom();
+            }
+            else
+            {
+                ConnectService();
+            }
         }
     }
 }
