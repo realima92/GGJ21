@@ -42,29 +42,26 @@ namespace Mechanics
 
         private void Movement(Vector2 move)
         {
-            Vector2 targetDir = new Vector3(move.x, 0f, move.y);
+            Vector3 targetDir = new Vector3(move.x, 0f, move.y);
             targetDir = Camera.main.transform.TransformDirection(targetDir);
             targetDir.y = 0f;
             HandleRotation(targetDir);
+            HandleMovement(targetDir);
         }
 
-        private void HandleRotation(Vector2 targetDir)
+        private void HandleMovement(Vector3 targetDir)
+        {
+            _body.MovePosition(transform.position + (targetDir * RunSpeed * Time.deltaTime));
+        }
+
+        private void HandleRotation(Vector3 targetDir)
         {
             if (targetDir.magnitude > 0.1f)
             {
-                _targetRotation = Quaternion.LookRotation(targetDir, Vector3.up);
-            }
-        }
-
-        private void LateUpdate()
-        {
-            UpdateRotation();
-        }
-
-        private void UpdateRotation()
-        {
+                _targetRotation = Quaternion.LookRotation(targetDir, Vector3.up); 
                 Quaternion newRotation = Quaternion.Lerp(_body.rotation, _targetRotation, TurnSmooth * Time.deltaTime);
                 _body.MoveRotation(newRotation);
+            }
         }
     }
 }
