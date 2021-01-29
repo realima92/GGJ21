@@ -3,10 +3,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadingController : MonoBehaviour
 {
     [SerializeField] private GameObject loadingUI;
+    [SerializeField] private Image fadeUI;
 
     // Start is called before the first frame update
     void Awake()
@@ -15,36 +17,30 @@ public class LoadingController : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded();
     }
 
-    public void EnterLobby()
-    {
-        Invoke("ShowLoadingUI", .3f);
-        SceneManager.LoadScene("GameLobby");
-    }
-
-    public void BackScene()
-    {
-        //Temporary code
-        Invoke("ShowLoadingUI", .3f);
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    internal void StartGame()
-    {
-        Invoke("ShowLoadingUI", .3f);
-        SceneManager.LoadScene("GamePlay");
-    }
-
-    private void ShowLoadingUI()
-    {
-        loadingUI.SetActive(true);
-    }
-
     private UnityAction<Scene, LoadSceneMode> OnSceneLoaded()
     {
         return new UnityAction<Scene, LoadSceneMode>((scene, mode) =>
         {
             CancelInvoke("ShowLoadingUI");
             if (loadingUI && loadingUI.activeSelf) loadingUI.SetActive(false);
+            if (fadeUI && fadeUI.IsActive()) FadeOut();
         });
+    }
+
+    private void ShowLoadingUI(bool withFadeScreen = false)
+    {
+        loadingUI.SetActive(true);
+        if (withFadeScreen) FadeIn();
+    }
+
+    private void FadeIn()
+    {
+        fadeUI.gameObject.SetActive(true);
+    }
+
+    private void FadeOut()
+    {
+        fadeUI.gameObject.SetActive(true);
+        Destroy(gameObject, 1);
     }
 }

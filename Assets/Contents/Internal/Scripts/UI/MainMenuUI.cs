@@ -1,14 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class MainMenuUI : MonoBehaviour
 {
-    public void StartPressed()
+    [SerializeField] private List<PlayableAsset> Cuts;
+
+    private InputAction input;
+
+    private PlayableDirector _director;
+
+
+    private void Awake()
     {
-        GameManager.Instance.LoadController.EnterLobby();
+        _director = GetComponent<PlayableDirector>();
     }
-    
+
     public void ExitGame()
     {
-        GameManager.ExitGame();
+        StartCoroutine(GameManager.ExitGame(2.5f));
+    }
+
+    public void PlayCut(int cut_number)
+    {
+        _director.Stop();
+        _director.Play(Cuts[cut_number]);
     }
 }
