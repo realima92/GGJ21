@@ -245,8 +245,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.01666139, y: 0.13314098, z: -0.0022206292, w: 0.99095464}
-  m_LocalPosition: {x: 6.8001523, y: 1.3961183, z: -1.4651747}
+  m_LocalRotation: {x: 0.05002702, y: -0.7053349, z: 0.05002702, w: 0.7053349}
+  m_LocalPosition: {x: 4.5443783, y: 1.6512372, z: 9.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -451,26 +451,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1687258584}
-    - target: {fileID: 338492782153167973, guid: 0eaa574979c2d874c9205522e67a6eac,
-        type: 3}
-      propertyPath: m_Name
-      value: Connecting(TMP)
-      objectReference: {fileID: 0}
-    - target: {fileID: 338492782153167979, guid: 0eaa574979c2d874c9205522e67a6eac,
-        type: 3}
-      propertyPath: m_text
-      value: Connecting
-      objectReference: {fileID: 0}
-    - target: {fileID: 338492782153167979, guid: 0eaa574979c2d874c9205522e67a6eac,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 338492782153167979, guid: 0eaa574979c2d874c9205522e67a6eac,
-        type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 338492782280193972, guid: 0eaa574979c2d874c9205522e67a6eac,
         type: 3}
       propertyPath: m_Name
@@ -566,11 +546,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1687258584}
-    - target: {fileID: 338492782561689489, guid: 0eaa574979c2d874c9205522e67a6eac,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 338492782796879172, guid: 0eaa574979c2d874c9205522e67a6eac,
         type: 3}
       propertyPath: m_Camera
