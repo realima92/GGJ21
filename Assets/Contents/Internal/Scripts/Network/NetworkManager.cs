@@ -6,9 +6,10 @@ namespace Network
     public class NetworkManager : MonoBehaviour
     {
         private static NetworkManager _instance;
-        private static INetworkServices _service;
+        private PhotonNetworkService _service;
 
         public static NetworkManager Instance => _instance;
+        public static PhotonNetworkService Service { get { return _instance._service; } set { _instance._service = value; } }
 
         // Start is called before the first frame update
         void Awake()
@@ -30,20 +31,20 @@ namespace Network
 
         public static void ConnectService()
         {
-            _service = _instance.gameObject.AddComponent<PhotonNetworkService>();
+            Service = _instance.gameObject.AddComponent<PhotonNetworkService>();
         }
 
         public static void DisconnectService()
         {
-            _service = null;
-            Destroy((Component) _instance.gameObject.GetComponent<INetworkServices>());
+            Service = null;
+            Destroy((Component) _instance.gameObject.GetComponent<PhotonNetworkService>());
         }
 
         public static void JoinRoom()
         {
-            if (_service.InLobby())
+            if (Service.InLobby())
             {
-                _service.JoinRoom();
+                Service.JoinRoom();
             }
             else
             {

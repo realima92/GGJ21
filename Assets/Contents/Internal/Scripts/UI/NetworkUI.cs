@@ -1,18 +1,32 @@
-﻿using System.Collections;
+﻿using Network;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NetworkUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject connectingUI;
+    [SerializeField] private GameObject connectedUI;
+
+    private void OnLobbyConnected()
     {
-        
+        connectingUI?.SetActive(false);
+        connectedUI?.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UICallConnection()
     {
-        
+        connectingUI?.SetActive(true);
+        NetworkManager.ConnectService();
+        NetworkManager.Service.lobbyConnectedEvent += OnLobbyConnected;
+    }
+
+    public void CloseTV()
+    {
+        connectingUI?.SetActive(false);
+        connectedUI?.SetActive(false);
+        NetworkManager.Service.lobbyConnectedEvent -= OnLobbyConnected;
+        NetworkManager.DisconnectService();
     }
 }

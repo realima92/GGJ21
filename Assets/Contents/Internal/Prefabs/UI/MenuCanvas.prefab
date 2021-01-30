@@ -749,7 +749,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 713249128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338492782280193979}
+        m_MethodName: PlayCut
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1015767418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,6 +2729,7 @@ GameObject:
   - component: {fileID: 338492782506521373}
   - component: {fileID: 338492782506521372}
   - component: {fileID: 338492782506521383}
+  - component: {fileID: 3878089177896661518}
   m_Layer: 5
   m_Name: Canvas_Lobby
   m_TagString: Untagged
@@ -2856,6 +2868,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &3878089177896661518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338492782506521375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99904af2d12abf4b9321826a21c1818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectingUI: {fileID: 338492782153167973}
+  connectedUI: {fileID: 1434019031962913223}
 --- !u!1 &338492782561689491
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ namespace Network
 
         public bool InLobby() => _state == NetworkStates.Lobby || _state == NetworkStates.Room;
 
+        public delegate void LobbyConnectedEvent();
+        public LobbyConnectedEvent lobbyConnectedEvent;
+
         public override void OnEnable()
         {
             base.OnEnable();
@@ -66,15 +69,13 @@ namespace Network
         public override void OnJoinedLobby()
         {
             base.OnJoinedLobby();
+            lobbyConnectedEvent();
             Debug.Log($"[Network][{this.GetType().Name}] Joined lobby");
         }
 
         public void JoinRoom()
         {
-            if (PhotonNetwork.InLobby)
-            {
-                Debug.Log($"[Network][{this.GetType().Name}] Joining room...");
-            }
+            
         }
     }
 }
