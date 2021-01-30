@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ItemEscondivel
-  - SpawnPointItemEscondido
+  - Dog
+  - Human
+  - HideableItem
+  - SpawnPointHideableItem
   layers:
   - Default
   - TransparentFX

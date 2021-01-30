@@ -21,13 +21,13 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     #region callbacks
     [HideInInspector]
-    public List<GameBehavior> callbacks = new List<GameBehavior>();
-    public void AddCallback(GameBehavior callback)
+    public List<GameBehaviour> callbacks = new List<GameBehaviour>();
+    public void AddCallback(GameBehaviour callback)
     {
         //Debug.Log("Callback vinculado!");
         callbacks.Add(callback);
     }
-    public void RemoveCallback(GameBehavior callback)
+    public void RemoveCallback(GameBehaviour callback)
     {
         //Debug.Log("Callback retirado!");
         callbacks.Remove(callback);
@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     #endregion
 
-    List<ItemEscondivel> itemsEscondiveis = new List<ItemEscondivel>();
-    List<ItemEscondivel> itemsEncontrados = new List<ItemEscondivel>();
-    List<ItemEscondivel> itemsPerdidos = new List<ItemEscondivel>();
+    List<HideableItem> itemsEscondiveis = new List<HideableItem>();
+    List<HideableItem> itemsEncontrados = new List<HideableItem>();
+    List<HideableItem> itemsPerdidos = new List<HideableItem>();
 
     #region RPC
 
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         System.Random rnd = new System.Random(randomSeed);
 
         //Obtém itens da cena
-        var escondiveis = new List<ItemEscondivel>(FindObjectsOfType<ItemEscondivel>());
+        var escondiveis = new List<HideableItem>(FindObjectsOfType<HideableItem>());
         //Adiciona todos os itens escondiveis na lista
         itemsEscondiveis.AddRange(escondiveis);
         //Verifica se está ok
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             return;
         }
         //Obtém os pontos para esconder os itens
-        var spawnPointsEscondidos = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnPointItemEscondido"));
+        var spawnPointsEscondidos = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnPointHideableItem"));
         if(spawnPointsEscondidos.Count < itemsEscondiveis.Count)
         {
             Debug.LogWarning("SpawnPoints para itens escondidos é menor que o total de itens a esconder! " + itemsEscondiveis.Count + " vs " + spawnPointsEscondidos.Count);
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
     [PunRPC]
-    public void PickItem(ItemEscondivel item, GameObject player)
+    public void PickItem(HideableItem item, GameObject player)
     {
         if(player.tag == "Dog")
         {
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void DropItem(ItemEscondivel item, GameObject player)
+    public void DropItem(HideableItem item, GameObject player)
     {
         if (player.tag == "Dog")
         {

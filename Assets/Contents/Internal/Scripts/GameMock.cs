@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMock : GameBehavior
+public class GameMock : GameBehaviour
 {
 
     void Start()

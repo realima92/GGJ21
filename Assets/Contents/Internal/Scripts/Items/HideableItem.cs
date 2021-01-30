@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemEscondivel : MonoBehaviour
+public class HideableItem : MonoBehaviour
 {
-
     public bool Lost = false;
 
     // Start is called before the first frame update

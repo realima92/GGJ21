@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8022982686859046571}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (1)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 8022982686871069289}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (2)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8022982687036223654}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (6)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4929,7 +4929,7 @@ GameObject:
   - component: {fileID: 8022982687633364752}
   m_Layer: 0
   m_Name: Living Room Key
-  m_TagString: ItemEscondivel
+  m_TagString: HideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5064,7 +5064,7 @@ GameObject:
   - component: {fileID: 8022982687664618089}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (8)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5094,7 +5094,7 @@ GameObject:
   - component: {fileID: 8022982687788901551}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (4)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5124,7 +5124,7 @@ GameObject:
   - component: {fileID: 8022982687898718215}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (5)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5154,7 +5154,7 @@ GameObject:
   - component: {fileID: 8022982688121426590}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (7)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5220,7 +5220,7 @@ GameObject:
   - component: {fileID: 8022982688248349266}
   m_Layer: 0
   m_Name: Remote Control
-  m_TagString: ItemEscondivel
+  m_TagString: HideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10109,7 +10109,7 @@ GameObject:
   - component: {fileID: 8022982688906557850}
   m_Layer: 0
   m_Name: HiddenSpawnPoint (3)
-  m_TagString: SpawnPointItemEscondido
+  m_TagString: SpawnPointHideableItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
