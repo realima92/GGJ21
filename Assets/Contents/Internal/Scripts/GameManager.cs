@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -58,6 +59,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     List<HideableItem> itemsEscondiveis = new List<HideableItem>();
     List<HideableItem> itemsEncontrados = new List<HideableItem>();
     List<HideableItem> itemsPerdidos = new List<HideableItem>();
+
+    public bool IsLocalPlayerHuman { get; set; }
 
     #region RPC
 
@@ -117,53 +120,78 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
     [PunRPC]
-    public void PickItem(HideableItem item, GameObject player)
+    public void PickHideableItem(HideableItem item, PlayerItemController player)
     {
-        if(player.tag == "Dog")
+        if(player.tag != "Human")
         {
-            if(!item.Lost)
+            if(!item.Lost && player.itemPicked == null)
             {
-                //TODO: Colocar item na boca do cachorro
+                item.transform.parent = player.pickSpawnPoint;
+                item.transform.localPosition = Vector3.zero;
+                item.transform.localRotation = Quaternion.identity;
+                item.transform.Rotate(item.RotationOnPick);
+                player.itemPicked = item;
+                item.Picked = true;
             }
         }
         else
         {
-            if(item.Lost)
+            if(item.Lost && player.itemPicked == null)
             {
                 item.Lost = false;
                 itemsEncontrados.Add(item);
                 itemsPerdidos.Remove(item);
-                //TODO: Colocar item na mão do jogador
+                player.itemPicked = item;
+                item.Picked = true;
+
+                item.transform.parent = player.pickSpawnPoint;
+                item.transform.localPosition = Vector3.zero;
+                item.transform.localRotation = Quaternion.identity;
+                item.transform.Rotate(item.RotationOnPick);
+               
             }
         }
 
         //Trigger event
-        callbacks.ForEach(c => c.OnItemPicked(item, player));
+        callbacks.ForEach(c => c.OnHideableItemPicked(item, player));
     }
 
     [PunRPC]
-    public void DropItem(HideableItem item, GameObject player)
+    public void DropHideableItem(HideableItem item, PlayerItemController player)
     {
-        if (player.tag == "Dog")
+        if (player.tag != "Human")
         {
             if (!item.Lost)
             {
                 item.Lost = true;
                 itemsPerdidos.Add(item);
                 itemsEncontrados.Remove(item);
-                //TODO: Colocar item na posicao atual do cachorro
+                player.itemPicked = null;
+                item.Picked = false;
+
+                item.transform.parent = null;
+                //item.transform.localPosition = Vector3.zero;
+                item.transform.localRotation = Quaternion.identity;
+                GameBehaviour.PutOnFloor(item.transform);
             }
         }
         else
         {
-            if (item.Lost)
-            {
-                //TODO: Colocar item na posicao atual do cachorro
-            }
+            item.transform.parent = null;
+            //item.transform.localPosition = Vector3.zero;
+            item.transform.localRotation = Quaternion.identity;
+            GameBehaviour.PutOnFloor(item.transform);
+            player.itemPicked = null;
+            item.Picked = false;
+
+            //if (item.Lost)
+            //{
+            //TODO: Colocar item na posicao atual do cachorro
+            //}
         }
 
         //Trigger event
-        callbacks.ForEach(c => c.OnItemDropped(item, player));
+        callbacks.ForEach(c => c.OnHideableItemDropped(item, player));
     }
 
     [PunRPC]
