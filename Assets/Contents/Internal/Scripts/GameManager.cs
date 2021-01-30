@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Network;
 using System;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,14 +24,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void StartSingleplayer()
+    public static IEnumerator ExitGame(float delay)
     {
-        Instance.LoadController.StartGame();
-    }
-
-    public static void ExitGame()
-    {
-        NetworkManager.DisconnectService();
+        yield return new WaitForSeconds(delay);
         Debug.Log($"[GameManager] Bye Bye!");
         Application.Quit();
 #if UNITY_EDITOR

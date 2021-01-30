@@ -74,7 +74,6 @@ namespace Network
             if (PhotonNetwork.InLobby)
             {
                 Debug.Log($"[Network][{this.GetType().Name}] Joining room...");
-                PhotonNetwork.JoinRandomRoom();
             }
         }
     }

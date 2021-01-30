@@ -114,96 +114,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""Menu Controls"",
-            ""id"": ""b090d508-9c8e-40c5-9e59-a07745e8a1cd"",
-            ""actions"": [
-                {
-                    ""name"": ""Click"",
-                    ""type"": ""Button"",
-                    ""id"": ""090c8eab-2dc3-47b9-8807-bac6be2cf8fc"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Navigate"",
-                    ""type"": ""Button"",
-                    ""id"": ""fa157ac5-f02f-4f57-b96b-702856648825"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""25766300-8357-4556-ad70-c1b94e5107e3"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Navigate"",
-                    ""id"": ""1fe9b6c5-0051-41bb-8055-4886ccd64780"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""07371b53-d03e-4bc3-8fd4-c31fd8d1b98b"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""80508383-d427-487b-a741-b47ac8200e26"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2cad6aa4-ebb3-45b9-b81a-ff2162c5b135"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""0c153b7c-1df7-4fcc-9220-9e33d278841b"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                }
-            ]
         }
     ],
     ""controlSchemes"": []
@@ -212,10 +122,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_GameplayControls = asset.FindActionMap("Gameplay Controls", throwIfNotFound: true);
         m_GameplayControls_Movement = m_GameplayControls.FindAction("Movement", throwIfNotFound: true);
         m_GameplayControls_TogglePause = m_GameplayControls.FindAction("TogglePause", throwIfNotFound: true);
-        // Menu Controls
-        m_MenuControls = asset.FindActionMap("Menu Controls", throwIfNotFound: true);
-        m_MenuControls_Click = m_MenuControls.FindAction("Click", throwIfNotFound: true);
-        m_MenuControls_Navigate = m_MenuControls.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -302,55 +208,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public GameplayControlsActions @GameplayControls => new GameplayControlsActions(this);
-
-    // Menu Controls
-    private readonly InputActionMap m_MenuControls;
-    private IMenuControlsActions m_MenuControlsActionsCallbackInterface;
-    private readonly InputAction m_MenuControls_Click;
-    private readonly InputAction m_MenuControls_Navigate;
-    public struct MenuControlsActions
-    {
-        private @InputMaster m_Wrapper;
-        public MenuControlsActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Click => m_Wrapper.m_MenuControls_Click;
-        public InputAction @Navigate => m_Wrapper.m_MenuControls_Navigate;
-        public InputActionMap Get() { return m_Wrapper.m_MenuControls; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MenuControlsActions set) { return set.Get(); }
-        public void SetCallbacks(IMenuControlsActions instance)
-        {
-            if (m_Wrapper.m_MenuControlsActionsCallbackInterface != null)
-            {
-                @Click.started -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnClick;
-                @Click.performed -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnClick;
-                @Click.canceled -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnClick;
-                @Navigate.started -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnNavigate;
-                @Navigate.performed -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnNavigate;
-                @Navigate.canceled -= m_Wrapper.m_MenuControlsActionsCallbackInterface.OnNavigate;
-            }
-            m_Wrapper.m_MenuControlsActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Click.started += instance.OnClick;
-                @Click.performed += instance.OnClick;
-                @Click.canceled += instance.OnClick;
-                @Navigate.started += instance.OnNavigate;
-                @Navigate.performed += instance.OnNavigate;
-                @Navigate.canceled += instance.OnNavigate;
-            }
-        }
-    }
-    public MenuControlsActions @MenuControls => new MenuControlsActions(this);
     public interface IGameplayControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnTogglePause(InputAction.CallbackContext context);
-    }
-    public interface IMenuControlsActions
-    {
-        void OnClick(InputAction.CallbackContext context);
-        void OnNavigate(InputAction.CallbackContext context);
     }
 }
