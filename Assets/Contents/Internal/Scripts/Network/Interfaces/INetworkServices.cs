@@ -13,6 +13,6 @@
 
         void JoinLobby();
         bool InLobby();
-        void JoinRoom();
+        void JoinRoom(string name);
     }
 }

@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Photon.Realtime;
+using System;
 using UnityEngine;
 
 namespace Network
 {
     public class NetworkManager : MonoBehaviour
     {
+        public byte maxPlayers = 2;
+        public int timeout = 3;
+        public RoomOptions roomSettings;
+
         private static NetworkManager _instance;
         private PhotonNetworkService _service;
 
@@ -40,16 +45,9 @@ namespace Network
             Destroy((Component) _instance.gameObject.GetComponent<PhotonNetworkService>());
         }
 
-        public static void JoinRoom()
+        public static void JoinRoom(string name)
         {
-            if (Service.InLobby())
-            {
-                Service.JoinRoom();
-            }
-            else
-            {
-                ConnectService();
-            }
+            Service.JoinRoom(name);
         }
     }
 }
