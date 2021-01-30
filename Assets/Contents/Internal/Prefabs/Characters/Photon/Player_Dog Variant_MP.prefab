@@ -48,11 +48,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 11430873, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016889965
+      value: 0.000000016888734
       objectReference: {fileID: 0}
     - target: {fileID: 11430873, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000032845962
+      value: -0.0000000032843566
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430874, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
+      propertyPath: m_Damping
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430874, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
+      propertyPath: m_Strategy
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430874, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
+      propertyPath: m_CameraRadius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430874, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
+      propertyPath: m_DistanceLimit
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430874, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
+      propertyPath: m_SmoothingTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430874, guid: 41be449aa71db6a4b86dfeba43dcabcd, type: 3}
+      propertyPath: m_DampingWhenOccluded
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4466485547153650363, guid: 41be449aa71db6a4b86dfeba43dcabcd,
         type: 3}
@@ -112,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 4466485547153650364, guid: 41be449aa71db6a4b86dfeba43dcabcd,
         type: 3}
       propertyPath: m_Name
-      value: Player_Dog Variant
+      value: Player_Dog Variant_MP
       objectReference: {fileID: 0}
     - target: {fileID: 4466485547153650364, guid: 41be449aa71db6a4b86dfeba43dcabcd,
         type: 3}
