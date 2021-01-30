@@ -41,8 +41,9 @@ namespace Network
 
         public static void DisconnectService()
         {
+            Destroy(Service);
             Service = null;
-            Destroy((Component) _instance.gameObject.GetComponent<PhotonNetworkService>());
+            //Destroy((Component) _instance.gameObject.GetComponent<PhotonNetworkService>());
         }
 
         public static void JoinRoom(string name)
