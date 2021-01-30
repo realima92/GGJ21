@@ -338,4 +338,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingUI: {fileID: 4680502984556958926}
-  fadeUI: {fileID: 0}
+  fadeUI: {fileID: 4496280355222214288}

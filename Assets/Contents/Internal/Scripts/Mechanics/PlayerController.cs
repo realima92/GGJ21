@@ -13,14 +13,12 @@ namespace Mechanics
 
         private InputMaster.GameplayControlsActions gameplayControls;
         private Rigidbody _body;
-        private Camera _cam;
 
         private Quaternion _targetRotation;
 
         private void Awake()
         {
             gameplayControls = new InputMaster().GameplayControls;
-            _cam = Camera.main;
             _body = GetComponent<Rigidbody>();
         }
 
