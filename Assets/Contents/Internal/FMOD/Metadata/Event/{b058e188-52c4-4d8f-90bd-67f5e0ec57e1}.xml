@@ -124,7 +124,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{1dfc724e-9733-4307-9b18-cd94e28fcd9d}">
 		<property name="volume">
-			<value>-20</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>DOG 1</value>
@@ -164,7 +164,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{9f7a492c-aed7-4022-a405-c5445db49d73}">
 		<property name="volume">
-			<value>-20</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>DOG 2</value>

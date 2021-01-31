@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{a63a42f1-3229-4066-8395-f130a376725b}">
 		<property name="name">
-			<value>MX</value>
+			<value>Music</value>
 		</property>
 		<property name="maxInstances">
 			<value>1</value>
