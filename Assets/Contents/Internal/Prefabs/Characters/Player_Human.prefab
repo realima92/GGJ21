@@ -713,8 +713,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449000152121292722}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 18
+  m_Mass: 60
+  m_Drag: 1
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -733,9 +733,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af286868523e9d4d8471dfe6ad05af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunSpeed: 10
+  RunSpeed: 2
   DashPower: 2
+  JumpImpulse: 10
   TurnSmooth: 15
+  MaxSpeed: 3
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &449299850504003057
 GameObject:
   m_ObjectHideFlags: 0
