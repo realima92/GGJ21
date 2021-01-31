@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if(IsMasterClient)
         {
+            
             photonView.RPC("StartGame", RpcTarget.All, (int)System.DateTime.Now.Ticks);
         }
     }

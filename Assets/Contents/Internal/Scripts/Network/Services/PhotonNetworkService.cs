@@ -141,7 +141,16 @@ namespace Network
             }
             Debug.Log($"[Network][{this.GetType().Name}] Creating room ! Room: {roomName}");
             var options = new RoomOptions() { MaxPlayers = 2, IsVisible = string.IsNullOrEmpty(name)};
-            PhotonNetwork.CreateRoom(roomName, options);
+
+            Debug.Log("Cria sala " + roomName);
+            if (options.IsVisible)
+            {
+                PhotonNetwork.CreateRoom(roomName, options);
+            }
+            else
+            {
+                PhotonNetwork.JoinOrCreateRoom(roomName, options, TypedLobby.Default);
+            }
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -182,7 +191,7 @@ namespace Network
             if (returnCode == ErrorCode.GameDoesNotExist)
             {
                 //Alert Player
-                HandleRoomNotFound(name);
+                HandleRoomNotFound(roomName);
             }
             else
             {

@@ -64,6 +64,7 @@ public class NetworkUI : MonoBehaviour
             //Ok
             () =>
             {
+                Debug.Log("Cria sala " + name);
                 NetworkManager.Service.CreateRoom(name);
             },
             //Cancel
