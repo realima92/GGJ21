@@ -53,7 +53,7 @@ public class GameBehaviour : MonoBehaviour
         else
         {
             needsToHookCallback = true;
-            Debug.Log("Aee xx " + needsToHookCallback);
+            //Debug.Log("Aee xx " + needsToHookCallback);
         }
         
     }
