@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     #region Player
     public PlayerData[] playerData;
+    public PlayerItemController player;
     #endregion
 
     #region callbacks
@@ -30,8 +31,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     public List<GameBehaviour> callbacks = new List<GameBehaviour>();
     public void AddCallback(GameBehaviour callback)
     {
-        //Debug.Log("Callback vinculado!");
-        callbacks.Add(callback);
+        //if(callbacks.IndexOf(callback) == -1)
+        //{
+            Debug.Log("Callback vinculado! " + callback.gameObject.name);
+            callbacks.Add(callback);
+       // }
+            
     }
     public void RemoveCallback(GameBehaviour callback)
     {
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Awake()
     {
+        Duration = 5;
         if (_instance == null)
         {
             _instance = this;
@@ -62,8 +68,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     #endregion
 
     List<HideableItem> itemsEscondiveis = new List<HideableItem>();
-    List<HideableItem> itemsEncontrados = new List<HideableItem>();
-    List<HideableItem> itemsPerdidos = new List<HideableItem>();
+    public List<HideableItem> itemsEncontrados = new List<HideableItem>();
+    public List<HideableItem> itemsPerdidos = new List<HideableItem>();
 
     public bool IsLocalPlayerHuman { get; set; }
 
