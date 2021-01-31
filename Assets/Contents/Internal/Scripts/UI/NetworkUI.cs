@@ -10,6 +10,8 @@ public class NetworkUI : MonoBehaviour
     [SerializeField] private GameObject connectingUI;
     [SerializeField] private GameObject connectedUI;
     [SerializeField] private GameObject searchingUI;
+    [SerializeField] private GameObject waitingUI;
+    [SerializeField] private GameObject matchUI;
 
     [SerializeField] private TVAlertUI popupAlert;
 
@@ -74,11 +76,15 @@ public class NetworkUI : MonoBehaviour
     private void OnRoomEntered()
     {
         //Waiting player...
+        searchingUI?.SetActive(false);
+        waitingUI?.SetActive(true);
     }
 
     private void OnRoomStarted()
     {
         //Player found!
+        searchingUI?.SetActive(false);
+        waitingUI?.SetActive(true);
         GameManager.Instance.CreatePlayer();
     }
 
