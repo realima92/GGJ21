@@ -73,6 +73,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         var data = playerData[PhotonNetwork.IsMasterClient ? 0 : 1];
         PhotonNetwork.Instantiate(data.prefabName, data.transform.position, data.transform.rotation);
+
+        if(IsMasterClient)
+        {
+            photonView.RPC("StartGame", RpcTarget.All, (int)System.DateTime.Now.Ticks);
+        }
     }
 
     #region RPC
@@ -80,6 +85,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void StartGame(int randomSeed, PhotonMessageInfo info)
     {
+        Debug.Log("Called StartGame! " + randomSeed);
         //Verifica se está no modo "Mock" (simulando o modo online)
         IsMock = FindObjectsOfType<GameMock>().Length >= 1;
         //Registra o horário que começou o jogo
@@ -132,9 +138,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void PickHideableItem(HideableItem item, PlayerItemController player)
+    public void PickHideableItem(string itemStr, string playerStr)
     {
-        if(player.tag != "Human")
+        Debug.Log("Pick " + itemStr + " by " + playerStr);
+        HideableItem item = GameObject.Find(itemStr).GetComponent<HideableItem>();
+        PlayerItemController player = GameObject.Find(playerStr).GetComponent<PlayerItemController>();
+        if (player.tag != "Human")
         {
             if(!item.Lost && player.itemPicked == null)
             {
@@ -169,8 +178,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void DropHideableItem(HideableItem item, PlayerItemController player)
+    public void DropHideableItem(string itemStr, string playerStr)
     {
+        Debug.Log("Drop " + itemStr + " by " + playerStr);
+        HideableItem item = GameObject.Find(itemStr).GetComponent<HideableItem>();
+        PlayerItemController player = GameObject.Find(playerStr).GetComponent<PlayerItemController>();
         if (player.tag != "Human")
         {
             if (!item.Lost)
@@ -184,7 +196,8 @@ public class GameManager : MonoBehaviourPunCallbacks
                 item.transform.parent = null;
                 //item.transform.localPosition = Vector3.zero;
                 item.transform.localRotation = Quaternion.identity;
-                GameBehaviour.PutOnFloor(item.transform);
+                //GameBehaviour.PutOnFloor(item.transform);
+                item.transform.localPosition -= new Vector3(0.0f, item.transform.localPosition.y - item.transform.localScale.y, 0.0f);
             }
         }
         else
@@ -192,7 +205,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             item.transform.parent = null;
             //item.transform.localPosition = Vector3.zero;
             item.transform.localRotation = Quaternion.identity;
-            GameBehaviour.PutOnFloor(item.transform);
+            //GameBehaviour.PutOnFloor(item.transform);
+            item.transform.localPosition -= new Vector3(0.0f, item.transform.localPosition.y - item.transform.localScale.y / 2, 0.0f);
             player.itemPicked = null;
             item.Picked = false;
 

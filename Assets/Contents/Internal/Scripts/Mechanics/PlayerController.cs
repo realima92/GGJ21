@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 namespace Mechanics
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : GameBehaviour
     {
         public int RunSpeed = 5;
         public int DashPower = 2;
@@ -19,8 +19,13 @@ namespace Mechanics
         private void Awake()
         {
             gameplayControls = new InputMaster().GameplayControls;
-            gameplayControls.Jump.performed += OnJumpPerformed;
-            _body = GetComponent<Rigidbody>();
+            if (IsMine)
+            {
+                gameplayControls.Jump.performed += OnJumpPerformed;
+                _body = GetComponent<Rigidbody>();
+            }
+            //Só ativa camera follow se for mine!
+            RecursiveFindChild(transform, "CameraFollow").gameObject.SetActive(IsMine);
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext obj)
@@ -31,12 +36,18 @@ namespace Mechanics
 
         private void OnEnable()
         {
-            gameplayControls.Enable();
+            if (IsMine)
+            {
+                gameplayControls.Enable();
+            }
         }
 
         private void OnDisable()
         {
-            gameplayControls.Disable();
+            if (IsMine)
+            {
+                gameplayControls.Disable();
+            }
         }
 
         // Update is called once per frame

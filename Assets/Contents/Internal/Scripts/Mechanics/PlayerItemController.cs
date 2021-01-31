@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,18 +12,28 @@ public class PlayerItemController : GameBehaviour
 
     private void Awake()
     {
+        Debug.Log("tag: " + tag + " IsMine " + IsMine);
         gameplayControls = new InputMaster().GameplayControls;
-        gameplayControls.Interact.performed += OnInteractPerformed;
+        if (IsMine)
+        {
+            gameplayControls.Interact.performed += OnInteractPerformed;
+        }
     }
 
     private void OnEnable()
     {
-        gameplayControls.Enable();
+        if (IsMine)
+        {
+            gameplayControls.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        gameplayControls.Disable();
+        if (IsMine)
+        {
+            gameplayControls.Disable();
+        }
     }
 
 
@@ -93,11 +104,11 @@ public class PlayerItemController : GameBehaviour
     {
         if (IsMock)
         {
-            gameManager.PickHideableItem(item, this);
+            gameManager.PickHideableItem(GetGameObjectPath(item.transform), GetGameObjectPath(this.transform));
         }
         else
         {
-            gameManager.photonView.RPC("PickHideableItem", Photon.Pun.RpcTarget.All, item, this);
+            gameManager.photonView.RPC("PickHideableItem", Photon.Pun.RpcTarget.All, GetGameObjectPath(item.transform), GetGameObjectPath(this.transform));
         }
     }
 
@@ -105,11 +116,11 @@ public class PlayerItemController : GameBehaviour
     {
         if (IsMock)
         {
-            gameManager.DropHideableItem(item, this);
+            gameManager.DropHideableItem(GetGameObjectPath(item.transform), GetGameObjectPath(this.transform));
         }
         else
         {
-            gameManager.photonView.RPC("DropHideableItem", Photon.Pun.RpcTarget.All, item, this);
+            gameManager.photonView.RPC("DropHideableItem", Photon.Pun.RpcTarget.All, GetGameObjectPath(item.transform), GetGameObjectPath(this.transform));
         }
     }
 
