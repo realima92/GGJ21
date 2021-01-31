@@ -83,8 +83,9 @@ public class NetworkUI : MonoBehaviour
     private void OnRoomStarted()
     {
         //Player found!
-        searchingUI?.SetActive(false);
-        waitingUI?.SetActive(true);
+        waitingUI?.SetActive(false);
+        matchUI?.SetActive(true);
+        
         GameManager.Instance.CreatePlayer();
     }
 
