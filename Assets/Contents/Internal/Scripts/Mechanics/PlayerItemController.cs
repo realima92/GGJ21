@@ -61,15 +61,15 @@ public class PlayerItemController : GameBehaviour
         {
             if (pickSpawnPoint == null)
             {
-                pickSpawnPoint = RecursiveFindChild(transform, "JawEnd_M");
+                pickSpawnPoint = RecursiveFindChild(transform, "bone_jaw");
             }
         }
         else
         {
             if (pickSpawnPoint == null)
             {
-                pickSpawnPoint = RecursiveFindChild(transform, "IndexFinger_01 1");
-                pickSpawnPointHand2 = RecursiveFindChild(transform, "IndexFinger_01");
+                pickSpawnPoint = RecursiveFindChild(transform, "IndexFinger2_R");
+                pickSpawnPointHand2 = RecursiveFindChild(transform, "IndexFinger2_L");
             }
         }
     }

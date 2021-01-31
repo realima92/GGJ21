@@ -111,9 +111,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         //Obtém os pontos para esconder os itens
         var spawnPointsEscondidos = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnPointHideableItem"));
-        if(spawnPointsEscondidos.Count < itemsEscondiveis.Count)
+        if(spawnPointsEscondidos.Count < itemsEscondiveis.Count / 2)
         {
-            Debug.LogWarning("SpawnPoints para itens escondidos é menor que o total de itens a esconder! " + itemsEscondiveis.Count + " vs " + spawnPointsEscondidos.Count);
+            Debug.LogWarning("SpawnPoints para itens escondidos é menor que o total de itens a esconder! " + itemsEscondiveis.Count / 2 + " vs " + spawnPointsEscondidos.Count);
             return;
         }
 
@@ -230,6 +230,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         IsPlaying = false;
         IsFinished = true;
+        Debug.Log("Encerrou jogo! winner = " + winner);
 
         //Trigger event
         callbacks.ForEach(c => c.OnGameEnd(winner));
