@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NetworkUI : MonoBehaviour
 {
@@ -85,8 +86,8 @@ public class NetworkUI : MonoBehaviour
         //Player found!
         waitingUI?.SetActive(false);
         matchUI?.SetActive(true);
-        
-        GameManager.Instance.CreatePlayer();
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(0).completed += (ops) => GameManager.Instance.CreatePlayer();
     }
 
     public void CloseTV()

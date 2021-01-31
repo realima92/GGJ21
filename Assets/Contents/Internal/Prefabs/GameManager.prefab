@@ -43,4 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40836280a1263fe4b8eeae67a88b52d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Duration: 60
+  playerData:
+  - prefabName: Player_Dog Variant_MP
+    transform: {fileID: 0}
+  - prefabName: Player_Human Variant_MP
+    transform: {fileID: 0}
+  player: {fileID: 0}
+  callbacks: []
+  itemsEncontrados: []
+  itemsPerdidos: []
   LoadController: {fileID: 0}
