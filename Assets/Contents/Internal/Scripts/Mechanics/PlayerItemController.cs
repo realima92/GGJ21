@@ -79,7 +79,6 @@ public class PlayerItemController : GameBehaviour
         if(other.tag == "HideableItem")
         {
             var item = other.GetComponent<HideableItem>();
-            
             if(autoPick)
             {
                 PickHideableItem(item);
