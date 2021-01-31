@@ -47,7 +47,10 @@ public class PlayerItemController : GameBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(IsMine)
+        {
+            GameManager.Instance.player = this;
+        }
         if(gameplayControls.enabled)
         {
             GameManager.Instance.IsLocalPlayerHuman = tag == "Human";
