@@ -33,6 +33,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad41fa2a-dca7-4b16-bbfb-191e29008543"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""4de553b6-171d-4dd2-abb1-705487583c76"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -112,6 +128,39 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""TogglePause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d57a6fe-08cf-4833-95df-77c62ef9867a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eed639c0-f328-4a99-9faf-83c4f6ee50b8"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c08523d-2d2e-4e2c-9a48-f15135edcde9"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +171,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_GameplayControls = asset.FindActionMap("Gameplay Controls", throwIfNotFound: true);
         m_GameplayControls_Movement = m_GameplayControls.FindAction("Movement", throwIfNotFound: true);
         m_GameplayControls_TogglePause = m_GameplayControls.FindAction("TogglePause", throwIfNotFound: true);
+        m_GameplayControls_Jump = m_GameplayControls.FindAction("Jump", throwIfNotFound: true);
+        m_GameplayControls_Interact = m_GameplayControls.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -173,12 +224,16 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IGameplayControlsActions m_GameplayControlsActionsCallbackInterface;
     private readonly InputAction m_GameplayControls_Movement;
     private readonly InputAction m_GameplayControls_TogglePause;
+    private readonly InputAction m_GameplayControls_Jump;
+    private readonly InputAction m_GameplayControls_Interact;
     public struct GameplayControlsActions
     {
         private @InputMaster m_Wrapper;
         public GameplayControlsActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_GameplayControls_Movement;
         public InputAction @TogglePause => m_Wrapper.m_GameplayControls_TogglePause;
+        public InputAction @Jump => m_Wrapper.m_GameplayControls_Jump;
+        public InputAction @Interact => m_Wrapper.m_GameplayControls_Interact;
         public InputActionMap Get() { return m_Wrapper.m_GameplayControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -194,6 +249,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @TogglePause.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnTogglePause;
                 @TogglePause.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnTogglePause;
                 @TogglePause.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnTogglePause;
+                @Jump.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnJump;
+                @Interact.started -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_GameplayControlsActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_GameplayControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -204,6 +265,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @TogglePause.started += instance.OnTogglePause;
                 @TogglePause.performed += instance.OnTogglePause;
                 @TogglePause.canceled += instance.OnTogglePause;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -212,5 +279,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnTogglePause(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
