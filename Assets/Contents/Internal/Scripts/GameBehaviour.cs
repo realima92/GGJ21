@@ -53,16 +53,15 @@ public class GameBehaviour : MonoBehaviour
         else
         {
             needsToHookCallback = true;
+            //Debug.Log("Aee xx " + needsToHookCallback);
         }
         
     }
 
     private void Start()
     {
-        if(needsToHookCallback)
-        {
-            GameManager.Instance.AddCallback(this);
-        }
+        //Debug.Log("Aee o: " + needsToHookCallback);
+        GameManager.Instance.AddCallback(this);
     }
 
     private void OnDisable()

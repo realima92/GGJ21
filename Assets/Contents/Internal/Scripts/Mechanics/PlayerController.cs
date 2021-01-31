@@ -83,5 +83,15 @@ namespace Mechanics
                 _body.MoveRotation(newRotation);
             }
         }
+
+        public override void OnGameEnd(string winner)
+        {
+            if (IsMine)
+            {
+                gameplayControls.Disable();
+            }
+        }
+
+
     }
 }
