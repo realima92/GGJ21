@@ -17,11 +17,11 @@ public class AdditiveScene : MonoBehaviour
 
     private void OnLoad(AsyncOperation ops)
     {
-        Invoke("DelayedActivation", 1);
+        SceneManager.SetActiveScene(SceneManager.GetSceneAt(index));
+        //Invoke("DelayedActivation", 1);
     }
 
     public void DelayedActivation()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(index));
     }
 }

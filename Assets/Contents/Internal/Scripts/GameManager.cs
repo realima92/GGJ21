@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -18,6 +19,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool IsFinished { get; private set; }
     public bool IsMock { get; private set; }
     public bool IsMasterClient { get => IsMock ? true : PhotonNetwork.IsMasterClient; }
+    #endregion
+
+    #region Player
+    public PlayerData[] playerData;
     #endregion
 
     #region callbacks
@@ -61,6 +66,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     List<HideableItem> itemsPerdidos = new List<HideableItem>();
 
     public bool IsLocalPlayerHuman { get; set; }
+
+    public void CreatePlayer()
+    {
+        if (!PhotonNetwork.InRoom) return;
+
+        var data = playerData[PhotonNetwork.IsMasterClient ? 0 : 1];
+        PhotonNetwork.Instantiate(data.prefabName, data.transform.position, data.transform.rotation);
+    }
 
     #region RPC
 
@@ -117,7 +130,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         IsFinished = false;
         callbacks.ForEach(c => c.OnGameStart());
     }
-
 
     [PunRPC]
     public void PickHideableItem(HideableItem item, PlayerItemController player)
@@ -242,4 +254,5 @@ public class GameManager : MonoBehaviourPunCallbacks
         UnityEditor.EditorApplication.ExitPlaymode();
 #endif
     }
+
 }

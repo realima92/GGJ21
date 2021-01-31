@@ -20,6 +20,10 @@ namespace Network
         public RoomNotFoundEvent roomNotFoundEvent;
         public delegate void RoomEnteredEvent();
         public RoomEnteredEvent roomEnteredEvent;
+        public delegate void RoomStartedEvent();
+        public RoomStartedEvent roomStartedEvent;
+
+        private string roomName;
 
 
         #region Start Connection
@@ -97,18 +101,18 @@ namespace Network
         #region Room
         public void JoinRoom(string name)
         {
-            Debug.Log($"[Network][{this.GetType().Name}] Joining room: { (string.IsNullOrEmpty(name) ? "Random" : name) }");
-            if (string.IsNullOrEmpty(name))
+            roomName = name;
+            Debug.Log($"[Network][{this.GetType().Name}] Joining room: { (string.IsNullOrEmpty(roomName) ? "Random" : roomName) }");
+            if (string.IsNullOrEmpty(roomName))
             {
                 //Random Room
                 PhotonNetwork.JoinRandomRoom(null, NetworkManager.Instance.maxPlayers, MatchmakingMode.FillRoom, TypedLobby.Default, null);
-                StartCoroutine("Timeout", "");
+                StartCoroutine("Timeout");
             }
             else
             {
                 //Specific Room
-                PhotonNetwork.JoinRoom(name);
-                StartCoroutine("Timeout", name);
+                PhotonNetwork.JoinRoom(roomName);
             }
         }
 
@@ -117,19 +121,39 @@ namespace Network
             base.OnJoinedRoom();
             _state = NetworkStates.Room;
             Debug.Log($"[Network][{this.GetType().Name}] Joined room! Room: {PhotonNetwork.CurrentRoom.Name}");
-            roomEnteredEvent();
+            //roomEnteredEvent(PhotonNetwork.CurrentRoom.);
+            if(PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                //Iniciar a partida
+                roomStartedEvent();
+            }
         }
 
         public void CreateRoom(string name)
         {
-            if (string.IsNullOrEmpty(name)) name = $"Room: RndRoom-{ Random.Range(0,9999).ToString("0000") }";
-            Debug.Log($"[Network][{this.GetType().Name}] Creating room ! Room: {name}");
+            if (string.IsNullOrEmpty(name))
+            { 
+                roomName = $"RndRoom-{ Random.Range(0, 9999).ToString("0000") }";
+            }
+            else
+            {
+                roomName = name;
+            }
+            Debug.Log($"[Network][{this.GetType().Name}] Creating room ! Room: {roomName}");
+            var options = new RoomOptions() { MaxPlayers = 2, IsVisible = string.IsNullOrEmpty(name)};
+            PhotonNetwork.CreateRoom(roomName, options);
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             base.OnPlayerEnteredRoom(newPlayer);
             Debug.Log($"[Network][{this.GetType().Name}] {newPlayer.NickName} entered room!");
+
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                //Iniciar a partida
+                roomStartedEvent();
+            }
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -139,10 +163,10 @@ namespace Network
         }
 
         #region Error Handles
-        public IEnumerator Timeout(string name = null)
+        public IEnumerator Timeout()
         {
             yield return new WaitForSeconds(NetworkManager.Instance.timeout);
-            HandleRoomNotFound(name);
+            HandleRoomNotFound(roomName);
         }
 
         public void HandleRoomNotFound(string name)
