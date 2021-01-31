@@ -18,6 +18,6 @@ public class AnimationController : MonoBehaviour
     void Update()
     {
         _anim.SetFloat("Velocity", animatedBody.velocity.sqrMagnitude);
-        Debug.Log(animatedBody.velocity.sqrMagnitude);
+        //Debug.Log(animatedBody.velocity.sqrMagnitude);
     }
 }

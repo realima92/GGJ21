@@ -19,7 +19,14 @@ namespace Mechanics
         private void Awake()
         {
             gameplayControls = new InputMaster().GameplayControls;
+            gameplayControls.Jump.performed += OnJumpPerformed;
             _body = GetComponent<Rigidbody>();
+        }
+
+        private void OnJumpPerformed(InputAction.CallbackContext obj)
+        {
+            Debug.Log("Jump!");
+            //TODO
         }
 
         private void OnEnable()

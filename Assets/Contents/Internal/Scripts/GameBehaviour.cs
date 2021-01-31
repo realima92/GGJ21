@@ -125,4 +125,20 @@ public class GameBehaviour : MonoBehaviour
             Debug.Log("NOT Find floor!");
         }
     }
+
+    public static void PutOnFloorParent(Transform trans)
+    {
+        RaycastHit hit;
+        float dist = 0.0f;
+        if (Physics.Raycast(trans.position, -Vector3.up, out hit))
+        {
+            //Debug.Log("Find floor!");
+            dist = hit.distance;
+            trans.parent.position -= new Vector3(0f, dist - trans.localScale.y, 0f);
+        }
+        else
+        {
+            Debug.Log("NOT Find floor!");
+        }
+    }
 }

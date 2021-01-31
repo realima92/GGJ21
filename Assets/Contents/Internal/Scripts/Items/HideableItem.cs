@@ -29,6 +29,7 @@ public class HideableItem : MonoBehaviour
     void Start()
     {
         UpdateSignal();
+        //GameBehaviour.PutOnFloorParent(transform);
     }
 
     void UpdateSignal()
