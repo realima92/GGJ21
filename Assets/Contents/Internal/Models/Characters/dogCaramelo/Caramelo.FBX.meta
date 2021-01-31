@@ -1,0 +1,453 @@
+fileFormatVersion: 2
+guid: b1a4626213cb8fd4cb3e12e0444d89bd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bone_ leg_back_L_1
+    100002: bone_ leg_back_L_2
+    100004: bone_ leg_back_L_3
+    100006: bone_ leg_back_L_4
+    100008: bone_ leg_back_L_5
+    100010: bone_ leg_back_R_1
+    100012: bone_ leg_back_R_2
+    100014: bone_ leg_back_R_3
+    100016: bone_ leg_back_R_4
+    100018: bone_ leg_back_R_5
+    100020: Bone_Ear_L_1
+    100022: Bone_Ear_L_2
+    100024: Bone_Ear_L_3
+    100026: Bone_Ear_L_4
+    100028: Bone_Ear_R_1
+    100030: Bone_Ear_R_2
+    100032: Bone_Ear_R_3
+    100034: Bone_Ear_R_4zz
+    100036: bone_head
+    100038: bone_jaw
+    100040: bone_leg_front_L_1
+    100042: bone_leg_front_L_2
+    100044: bone_leg_front_R_006
+    100046: bone_leg_front_R_007
+    100048: bone_leg_front_R_008
+    100050: bone_leg_front_R_1
+    100052: bone_leg_front_R_2
+    100054: bone_leg_front_R_3
+    100056: bone_leg_front_R_4
+    100058: bone_leg_front_R_5
+    100060: bone_neck
+    100062: bone_neck_1
+    100064: bone_neck_2
+    100066: bone_pelvis
+    100068: bone_spine_1
+    100070: bone_spine_2
+    100072: bone_tail_1
+    100074: bone_tail_2
+    100076: bone_tail_3
+    100078: bone_tail_4
+    100080: bone_tail_5
+    100082: bone_upper_lip
+    100084: //RootNode
+    100086: caramelo
+    100088: coleira
+    400000: bone_ leg_back_L_1
+    400002: bone_ leg_back_L_2
+    400004: bone_ leg_back_L_3
+    400006: bone_ leg_back_L_4
+    400008: bone_ leg_back_L_5
+    400010: bone_ leg_back_R_1
+    400012: bone_ leg_back_R_2
+    400014: bone_ leg_back_R_3
+    400016: bone_ leg_back_R_4
+    400018: bone_ leg_back_R_5
+    400020: Bone_Ear_L_1
+    400022: Bone_Ear_L_2
+    400024: Bone_Ear_L_3
+    400026: Bone_Ear_L_4
+    400028: Bone_Ear_R_1
+    400030: Bone_Ear_R_2
+    400032: Bone_Ear_R_3
+    400034: Bone_Ear_R_4zz
+    400036: bone_head
+    400038: bone_jaw
+    400040: bone_leg_front_L_1
+    400042: bone_leg_front_L_2
+    400044: bone_leg_front_R_006
+    400046: bone_leg_front_R_007
+    400048: bone_leg_front_R_008
+    400050: bone_leg_front_R_1
+    400052: bone_leg_front_R_2
+    400054: bone_leg_front_R_3
+    400056: bone_leg_front_R_4
+    400058: bone_leg_front_R_5
+    400060: bone_neck
+    400062: bone_neck_1
+    400064: bone_neck_2
+    400066: bone_pelvis
+    400068: bone_spine_1
+    400070: bone_spine_2
+    400072: bone_tail_1
+    400074: bone_tail_2
+    400076: bone_tail_3
+    400078: bone_tail_4
+    400080: bone_tail_5
+    400082: bone_upper_lip
+    400084: //RootNode
+    400086: caramelo
+    400088: coleira
+    2100000: 'Material #1.001'
+    4300000: coleira
+    4300002: caramelo
+    7400000: '!!dogo'
+    7400002: Idle
+    7400004: IdleLook
+    7400006: Atack
+    7400008: Die
+    7400010: Walk
+    7400012: Run
+    7400014: Jump
+    7400016: Sleep
+    9500000: //RootNode
+    13700000: caramelo
+    13700002: coleira
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #1.001'
+    second: {fileID: 2100000, guid: 823f1f13fbac8df4a8ef4aff578a9ba8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: '!!dogo'
+      takeName: '!!dogo'
+      firstFrame: 10
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: '!!dogo'
+      firstFrame: 20
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: IdleLook
+      takeName: '!!dogo'
+      firstFrame: 115
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Atack
+      takeName: '!!dogo'
+      firstFrame: 251
+      lastFrame: 281
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Die
+      takeName: '!!dogo'
+      firstFrame: 456
+      lastFrame: 500
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: '!!dogo'
+      firstFrame: 584
+      lastFrame: 624
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: '!!dogo'
+      firstFrame: 637
+      lastFrame: 653
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: '!!dogo'
+      firstFrame: 636
+      lastFrame: 648
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sleep
+      takeName: '!!dogo'
+      firstFrame: 716
+      lastFrame: 806
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
