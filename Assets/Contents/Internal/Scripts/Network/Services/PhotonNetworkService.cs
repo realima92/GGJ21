@@ -122,7 +122,7 @@ namespace Network
 
         public void CreateRoom(string name)
         {
-            if (string.IsNullOrEmpty(name)) name = $"Created room! Room: RndRoom-{ Random.Range(0,9999).ToString("0000") }";
+            if (string.IsNullOrEmpty(name)) name = $"Room: RndRoom-{ Random.Range(0,9999).ToString("0000") }";
             Debug.Log($"[Network][{this.GetType().Name}] Creating room ! Room: {name}");
         }
 

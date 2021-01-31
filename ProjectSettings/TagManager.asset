@@ -8,6 +8,8 @@ TagManager:
   - Human
   - HideableItem
   - SpawnPointHideableItem
+  - GrassFloor
+  - HouseFloor
   layers:
   - Default
   - TransparentFX
