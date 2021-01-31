@@ -4861,4 +4861,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1050b2398e0358a45abe543e7bf3fd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lost: 0
+  RotationOnPick: {x: 90, y: 0, z: 0}
