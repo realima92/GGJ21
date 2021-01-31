@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Awake()
     {
-        Duration = 5;
         if (_instance == null)
         {
             _instance = this;
