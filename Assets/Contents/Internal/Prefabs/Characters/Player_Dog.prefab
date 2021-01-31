@@ -472,9 +472,10 @@ GameObject:
   - component: {fileID: 4466485547153650361}
   - component: {fileID: 4466485547153650360}
   - component: {fileID: 1601083725643739026}
+  - component: {fileID: -2934690272722068506}
   m_Layer: 0
   m_Name: Player_Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,7 +533,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4466485547153650364}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2af286868523e9d4d8471dfe6ad05af3, type: 3}
   m_Name: 
@@ -554,6 +555,19 @@ CapsuleCollider:
   m_Height: 1.21
   m_Direction: 2
   m_Center: {x: 0, y: 0.16, z: 0}
+--- !u!114 &-2934690272722068506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466485547153650364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad15293d83f1c2749a399d45ed33a4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPick: 1
 --- !u!1 &7214909158235132158
 GameObject:
   m_ObjectHideFlags: 0

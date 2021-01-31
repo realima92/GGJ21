@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class GameBehaviour : MonoBehaviour
 {
-    public bool IsMock { get => GameManager.Instance.IsMock; }
+    public bool IsMock { get => GameManager.Instance != null ? GameManager.Instance.IsMock : true; }
 
     /// <summary>Cache field for the PhotonView on this GameObject.</summary>
     private PhotonView pvCache;
@@ -141,4 +141,17 @@ public class GameBehaviour : MonoBehaviour
             Debug.Log("NOT Find floor!");
         }
     }
+
+    public static string GetGameObjectPath(Transform transform)
+    {
+        string path = transform.name;
+        while (transform.parent != null)
+        {
+            transform = transform.parent;
+            path = transform.name + "/" + path;
+        }
+        return "/" + path;
+    }
+
+
 }

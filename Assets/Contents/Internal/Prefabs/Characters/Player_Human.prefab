@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 449000152121292724}
   - component: {fileID: 449000152121292727}
   - component: {fileID: 449000152121292726}
+  - component: {fileID: -7300599974836063579}
   m_Layer: 0
   m_Name: Player_Human
   m_TagString: Human
@@ -736,6 +737,19 @@ MonoBehaviour:
   RunSpeed: 10
   DashPower: 2
   TurnSmooth: 15
+--- !u!114 &-7300599974836063579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449000152121292722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad15293d83f1c2749a399d45ed33a4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPick: 1
 --- !u!1 &449299850504003057
 GameObject:
   m_ObjectHideFlags: 0

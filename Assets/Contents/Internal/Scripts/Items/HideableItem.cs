@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class HideableItem : MonoBehaviour
 {
     private bool _lost = false;
@@ -35,7 +37,8 @@ public class HideableItem : MonoBehaviour
     void UpdateSignal()
     {
         Transform trans = GameBehaviour.RecursiveFindChild(transform, "Particle System");
-        if(GameManager.Instance != null) trans.gameObject.SetActive(Lost == GameManager.Instance.IsLocalPlayerHuman && !Picked);
+        if(GameManager.Instance != null) trans.gameObject.SetActive(Lost == GameManager.Instance.IsLocalPlayerHuman && !_picked);
+        GetComponent<Collider>().enabled = !_picked;
     }
 
     // Update is called once per frame

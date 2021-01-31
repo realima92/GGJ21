@@ -1,20 +1,25 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Mechanics
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class PlayerController : GameBehaviour
+    public class PlayerController_v2 : GameBehaviour
     {
-        public int RunSpeed = 5;
+        public int RunSpeed = 2;
         public int DashPower = 2;
+        public int JumpImpulse = 10;
         public float TurnSmooth = 15f;
+        public float MaxSpeed = 3f;
+        public LayerMask GroundLayer;
 
         private InputMaster.GameplayControlsActions gameplayControls;
         private Rigidbody _body;
-
+        private Collider _collider;
         private Quaternion _targetRotation;
+        private bool _grounded;
 
         private void Awake()
         {
@@ -23,16 +28,28 @@ namespace Mechanics
             {
                 gameplayControls.Jump.performed += OnJumpPerformed;
                 _body = GetComponent<Rigidbody>();
+                
             }
             //Só ativa camera follow se for mine!
             RecursiveFindChild(transform, "CameraFollow").gameObject.SetActive(IsMine);
+            _collider = GetComponent<Collider>();
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext obj)
         {
-            Debug.Log("Jump!");
-            //TODO
+            if (_grounded)
+            {
+                Jump();
+            }
         }
+
+        private void Jump()
+        {
+            _body.AddForce(Vector3.up * JumpImpulse * 100, ForceMode.Impulse);
+            _grounded = false;
+        }
+
+
 
         private void OnEnable()
         {
@@ -55,6 +72,12 @@ namespace Mechanics
         {
             //Updates
             Movement(gameplayControls.Movement.ReadValue<Vector2>());
+            if (GroundDetected())
+            {
+                Landed();
+            };
+
+            LimitSpeed();
         }
 
         private void Movement(Vector2 move)
@@ -64,6 +87,27 @@ namespace Mechanics
             targetDir.y = 0f;
             HandleRotation(targetDir);
             HandleMovement(targetDir);
+        }
+
+        private bool GroundDetected()
+        {
+            return Physics.Raycast(_collider.bounds.center, Vector3.down, _collider.bounds.extents.y, GroundLayer.value);
+        }
+
+        private void Landed()
+        {
+            if (_grounded == false)
+            {
+                _grounded = true;
+            }
+        }
+
+        private void LimitSpeed()
+        {
+            if (_body.velocity.magnitude > MaxSpeed)
+            {
+                _body.velocity = _body.velocity.normalized * MaxSpeed;
+            }
         }
 
         private void HandleMovement(Vector3 targetDir)
@@ -76,9 +120,9 @@ namespace Mechanics
 
         private void HandleRotation(Vector3 targetDir)
         {
-            if (targetDir.magnitude > 0.1f)
+            if (targetDir.magnitude > 0.1f && _grounded)
             {
-                _targetRotation = Quaternion.LookRotation(targetDir, Vector3.up);
+                _targetRotation = Quaternion.LookRotation(targetDir, Vector3.up); 
                 Quaternion newRotation = Quaternion.Lerp(_body.rotation, _targetRotation, TurnSmooth * Time.deltaTime);
                 _body.MoveRotation(newRotation);
             }
