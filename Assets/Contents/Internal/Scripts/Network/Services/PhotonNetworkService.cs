@@ -122,7 +122,7 @@ namespace Network
             _state = NetworkStates.Room;
             Debug.Log($"[Network][{this.GetType().Name}] Joined room! Room: {PhotonNetwork.CurrentRoom.Name}");
             //roomEnteredEvent(PhotonNetwork.CurrentRoom.);
-            if(PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            if(PhotonNetwork.CurrentRoom.PlayerCount == NetworkManager.Instance.maxPlayers)
             {
                 //Iniciar a partida
                 roomStartedEvent();
@@ -161,6 +161,8 @@ namespace Network
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 //Iniciar a partida
+                if(PhotonNetwork.IsMasterClient)
+                    PhotonNetwork.CurrentRoom.IsOpen = false;
                 roomStartedEvent();
             }
         }
