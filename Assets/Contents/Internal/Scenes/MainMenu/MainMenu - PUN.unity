@@ -1053,6 +1053,21 @@ PrefabInstance:
       propertyPath: LoadController
       value: 
       objectReference: {fileID: 1231234913}
+    - target: {fileID: 1429687562477353301, guid: e8914d74f8ba2914ab53994a60c4d831,
+        type: 3}
+      propertyPath: characters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429687562477353301, guid: e8914d74f8ba2914ab53994a60c4d831,
+        type: 3}
+      propertyPath: characters.Array.data[0]
+      value: Player_Dog Variant_MP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429687562477353301, guid: e8914d74f8ba2914ab53994a60c4d831,
+        type: 3}
+      propertyPath: characters.Array.data[1]
+      value: Player_Human Variant_MP
+      objectReference: {fileID: 0}
     - target: {fileID: 1429687562477353302, guid: e8914d74f8ba2914ab53994a60c4d831,
         type: 3}
       propertyPath: m_RootOrder
@@ -1191,6 +1206,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4033166324949313438, guid: a391b27845ec6f84bad362899b8859e8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496280355222214288, guid: a391b27845ec6f84bad362899b8859e8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496280355222214288, guid: a391b27845ec6f84bad362899b8859e8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496280355222214288, guid: a391b27845ec6f84bad362899b8859e8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4680502984916441481, guid: a391b27845ec6f84bad362899b8859e8,
         type: 3}
       propertyPath: m_Name

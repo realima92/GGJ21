@@ -28,6 +28,8 @@ public class NetworkUI : MonoBehaviour
         NetworkManager.Service.connectionTimeoutEvent += OnConnectionTimeout;
         NetworkManager.Service.lobbyConnectedEvent += OnLobbyConnected;
         NetworkManager.Service.roomNotFoundEvent += OnRoomNotFound;
+        NetworkManager.Service.roomEnteredEvent += OnRoomEntered;
+        NetworkManager.Service.roomStartedEvent += OnRoomStarted;
     }
 
     private void OnConnectionTimeout()
@@ -67,6 +69,17 @@ public class NetworkUI : MonoBehaviour
                 searchingUI?.SetActive(false);
                 connectedUI.SetActive(true);
             });
+    }
+
+    private void OnRoomEntered()
+    {
+        //Waiting player...
+    }
+
+    private void OnRoomStarted()
+    {
+        //Player found!
+        GameManager.Instance.CreatePlayer();
     }
 
     public void CloseTV()
