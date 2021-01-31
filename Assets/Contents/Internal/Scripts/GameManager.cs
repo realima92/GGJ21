@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     #endregion
 
     #region Player
-    public string[] characters;
+    public PlayerData[] playerData;
     #endregion
 
     #region callbacks
@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         if (!PhotonNetwork.InRoom) return;
 
-        var prefab = characters[PhotonNetwork.IsMasterClient ? 0 : 1];
-        PhotonNetwork.Instantiate(prefab, Vector3.one, Quaternion.identity);
+        var data = playerData[PhotonNetwork.IsMasterClient ? 0 : 1];
+        PhotonNetwork.Instantiate(data.prefabName, data.transform.position, data.transform.rotation);
     }
 
     #region RPC
@@ -254,4 +254,5 @@ public class GameManager : MonoBehaviourPunCallbacks
         UnityEditor.EditorApplication.ExitPlaymode();
 #endif
     }
+
 }
