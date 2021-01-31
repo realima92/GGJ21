@@ -50,7 +50,10 @@ namespace Mechanics
 
         private void HandleMovement(Vector3 targetDir)
         {
-            _body.MovePosition(transform.position + (targetDir * RunSpeed * Time.deltaTime));
+            if (targetDir.magnitude > 0.1f)
+            {
+                _body.AddForce(_targetRotation * Vector3.forward * RunSpeed * 10 * Time.deltaTime, ForceMode.VelocityChange);
+            }
         }
 
         private void HandleRotation(Vector3 targetDir)
