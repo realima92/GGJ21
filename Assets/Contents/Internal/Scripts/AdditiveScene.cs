@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class AdditiveScene : MonoBehaviour
 {
     public int index = 1;
+    public bool setActive = true;
     public GameObject spawned;
 
     private void Awake()
@@ -17,11 +18,7 @@ public class AdditiveScene : MonoBehaviour
 
     private void OnLoad(AsyncOperation ops)
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(index));
-        //Invoke("DelayedActivation", 1);
-    }
-
-    public void DelayedActivation()
-    {
+        if(setActive)
+            SceneManager.SetActiveScene(SceneManager.GetSceneAt(index));
     }
 }
