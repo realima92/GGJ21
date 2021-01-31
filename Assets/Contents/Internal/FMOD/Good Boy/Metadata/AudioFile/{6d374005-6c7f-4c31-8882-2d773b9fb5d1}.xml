@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{6d374005-6c7f-4c31-8882-2d773b9fb5d1}">
+		<property name="assetPath">
+			<value>SFX Export - GD - STEP GRASS 15-NORM.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.47020408163265304</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{805f1032-8161-4daf-a23c-11b887cc2248}</destination>
+		</relationship>
+	</object>
+</objects>

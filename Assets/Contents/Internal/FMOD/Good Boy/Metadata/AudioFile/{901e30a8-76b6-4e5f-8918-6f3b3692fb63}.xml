@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{901e30a8-76b6-4e5f-8918-6f3b3692fb63}">
+		<property name="assetPath">
+			<value>SFX Export - GD - STEP DOG 12-NORM.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.57469387755102042</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{805f1032-8161-4daf-a23c-11b887cc2248}</destination>
+		</relationship>
+	</object>
+</objects>
