@@ -44,7 +44,13 @@ public class CanvasUItest : GameBehaviour
     {
         base.OnGameEnd(winner);
         placar.text = winner + " WINS!";
+#if UNITY_EDITOR
+        tempo.text = "TIME'S UP! Press <b>Command + F4</b> to exit";
+#elif UNITY_STANDALONE_OSX
+        tempo.text = "TIME'S UP! Press <b>Command + F4</b> to exit";
+#elif UNITY_STANDALONE
         tempo.text = "TIME'S UP! Press <b>Alt + F4</b> to exit";
+#endif
     }
 
 }
