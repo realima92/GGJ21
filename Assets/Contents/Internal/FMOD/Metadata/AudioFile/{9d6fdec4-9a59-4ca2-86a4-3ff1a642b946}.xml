@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{9d6fdec4-9a59-4ca2-86a4-3ff1a642b946}">
 		<property name="assetPath">
-			<value>GOOD DOG - MX Title Final.mp3</value>
+			<value>MX/GoodBoy_ThemeSong.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

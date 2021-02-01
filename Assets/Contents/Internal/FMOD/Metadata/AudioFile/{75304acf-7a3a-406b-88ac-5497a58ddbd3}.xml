@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{75304acf-7a3a-406b-88ac-5497a58ddbd3}">
 		<property name="assetPath">
-			<value>SFX Export - GD - BARK3 03-NORM.mp3</value>
+			<value>SFX/Dogs/Bark/Type2/BARK2_03.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{5a2fcc2e-dbd3-4ddf-aa57-65c334f99d7a}">
+		<property name="assetPath">
+			<value>SFX/Human/Step/Type2/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{805f1032-8161-4daf-a23c-11b887cc2248}</destination>
+		</relationship>
+	</object>
+</objects>

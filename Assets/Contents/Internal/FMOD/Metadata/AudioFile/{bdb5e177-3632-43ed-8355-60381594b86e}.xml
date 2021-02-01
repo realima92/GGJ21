@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{bdb5e177-3632-43ed-8355-60381594b86e}">
 		<property name="assetPath">
-			<value>SFX Export - GD - STEP GRASS 06-NORM.mp3</value>
+			<value>SFX/Human/Step/Type2/HUMAN_STEP2_06.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

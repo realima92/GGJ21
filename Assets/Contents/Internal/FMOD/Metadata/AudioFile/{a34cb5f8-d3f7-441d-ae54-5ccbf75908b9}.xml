@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{a34cb5f8-d3f7-441d-ae54-5ccbf75908b9}">
 		<property name="assetPath">
-			<value>Who_s a Good Boy - Gameplay - Human.wav</value>
+			<value>MX/GoodBoy_Gameplay_Human.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

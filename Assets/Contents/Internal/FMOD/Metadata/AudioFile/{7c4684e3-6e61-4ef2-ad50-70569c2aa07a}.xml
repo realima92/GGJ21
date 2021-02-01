@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{7c4684e3-6e61-4ef2-ad50-70569c2aa07a}">
 		<property name="assetPath">
-			<value>GOOD DOG - Fanfarra derrota.mp3</value>
+			<value>MX/Fanfare_Lose.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
