@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Contents/Internal/Scenes/MainMenu/MainMenu - PUN.unity
+    path: Assets/Contents/Internal/Scenes/MainMenu/MainMenu.unity
     guid: c7d6d01e0cdc7854f847f5ac1cdaa1cb
   - enabled: 1
-    path: Assets/Contents/Internal/Scenes/Maps/Gamemap.unity
+    path: Assets/Contents/Internal/Scenes/Maps/Residence1.unity
     guid: 081b5f4703a08a3479494e899cbd7a4e
   - enabled: 1
-    path: Assets/Contents/Internal/Scenes/GamePlay/GamePlay-MP.unity
+    path: Assets/Contents/Internal/Scenes/GamePlay/GamePlay.unity
     guid: 50971fcc5d2819241a87b8e733e836bb
   m_configObjects: {}
